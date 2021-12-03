@@ -1,6 +1,5 @@
-import java.util.List;
-
-public class Medico {
+public class Medico extends Persona{
+    /*
     private String codMedico;
     private String nombre;
     private String apPat;
@@ -96,5 +95,26 @@ public class Medico {
 
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
+    }
+     */
+    protected String codMedico;
+
+    public Medico(String nombre, String primerApellido, String segundoApellido, String dni, String codMedico) {
+        super(nombre, primerApellido, segundoApellido, dni);
+        this.setCodMedico(codMedico);
+    }
+
+
+    public String getCodMedico() {
+        return codMedico;
+    }
+
+    public void setCodMedico(String codMedico) {
+        this.codMedico = codMedico;
+    }
+
+    @Override
+    public String toString() {
+        return "Doctor/a: " + nombre + " " + primerApellido + " " + segundoApellido + ", Con el codigo: " + codMedico;
     }
 }

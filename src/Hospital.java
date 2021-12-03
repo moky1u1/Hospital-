@@ -1,6 +1,5 @@
-import java.util.List;
-
-public class Hospital {
+public class Hospital extends Ciudad {
+    /*
     private String codHospital;
     private String nombre;
     private int telefono;
@@ -74,5 +73,45 @@ public class Hospital {
 
     public void setMedico(Medico medico) {
         this.medico = medico;
+    }
+     */
+    protected String codHospital;
+    protected String nombreHospital;
+    protected int telefono;
+
+    public Hospital(String nombreCiudad, String codHospital, String nombreHospital, int telefono){
+        super(nombreCiudad);
+        this.setCodHospital(codHospital);
+        this.setNombreHospital(nombreHospital);
+        this.setTelefono(telefono);
+    }
+
+
+    public String getCodHospital() {
+        return codHospital;
+    }
+
+    public void setCodHospital(String codHospital) {
+        this.codHospital = codHospital;
+    }
+
+    public String getNombreHospital() {
+        return nombreHospital;
+    }
+
+    public void setNombreHospital(String nombreHospital) {
+        this.nombreHospital = nombreHospital;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+    @Override
+    public String toString() {
+        return "Hospital: "  + nombreHospital + ", Ubicado en la ciudad de " + nombreCiudad + ", con el telf: " + telefono ;
     }
 }

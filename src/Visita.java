@@ -1,6 +1,7 @@
 import java.util.Date;
 
-public class Visita{
+public class Visita extends Historial{
+    /*
     private String codVisista;
     private Date fechaHoraVis;
     private Hospital hospital;
@@ -115,5 +116,35 @@ public class Visita{
 
     public void setHistorial(Historial historial) {
         this.historial = historial;
+    }
+     */
+    private String codVisita;
+    private Date fechaVisita;
+
+    public Visita(String nombre, String primerApellido, String segundoApellido, String dni, String codPaciente, String nroSegSocial, String codHistorial, String codVisita, Date fechaVisita) {
+        super(nombre, primerApellido, segundoApellido, dni, codPaciente, nroSegSocial, codHistorial);
+        this.setCodVisita(codVisita);
+        this.setFechaVisita(fechaVisita);
+    }
+
+    public String getCodVisita() {
+        return codVisita;
+    }
+
+    public void setCodVisita(String codVisita) {
+        this.codVisita = codVisita;
+    }
+
+    public Date getFechaVisita() {
+        return fechaVisita;
+    }
+
+    public void setFechaVisita(Date fechaVisita) {
+        this.fechaVisita = fechaVisita;
+    }
+
+    @Override
+    public String toString() {
+        return "Visita " +codVisita + " Realizada por: "+ nombre + "  " + primerApellido + " " + segundoApellido + " al paciente con num: " + codPaciente + ", el dia: " + fechaVisita;
     }
 }

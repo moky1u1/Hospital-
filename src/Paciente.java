@@ -1,4 +1,5 @@
-public class Paciente {
+public class Paciente extends Persona {
+    /*
     private String codPaciente;
     private String nombre;
     private String apPat;
@@ -76,5 +77,37 @@ public class Paciente {
 
     public void setNumSegSocial(String numSegSocial) {
         this.numSegSocial = numSegSocial;
+    }
+     */
+    protected String codPaciente;
+    protected String nroSegSocial;
+
+    public Paciente(String nombre, String primerApellido, String segundoApellido, String dni,String codPaciente,String nroSegSocial){
+        super(nombre, primerApellido, segundoApellido, dni);
+
+        this.setCodPaciente(codPaciente);
+        this.setNroSegSocial(nroSegSocial);
+    }
+
+
+    public String getCodPaciente() {
+        return codPaciente;
+    }
+
+    public void setCodPaciente(String codPaciente) {
+        this.codPaciente = codPaciente;
+    }
+
+    public String getNroSegSocial() {
+        return nroSegSocial;
+    }
+
+    public void setNroSegSocial(String nroSegSocial) {
+        this.nroSegSocial = nroSegSocial;
+    }
+
+    @Override
+    public String toString() {
+        return "Paciente: " + nombre + " " + primerApellido + " " + segundoApellido ;
     }
 }

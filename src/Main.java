@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         //Medicos
         Medico juanPerez = new Medico("123","Juan", "Perez","Paredes","7654321");
         System.out.println(juanPerez);
@@ -41,7 +42,32 @@ public class Main {
         //Historial
         Historial historial1 = new Historial("824",lalolamas);
         System.out.println(historial1);
+         */
+        //CIUDAD
+        Ciudad cochabamba = new Ciudad("Cochabamba");
 
+        //PACIENTE
+        Paciente juanPerez = new Paciente("Juan","Perez", "Lopez","9871234","100","123456A");
+        System.out.println(juanPerez);
 
+        //HISTORIAL
+        Historial historial1 = new Historial(juanPerez.nombre, juanPerez.primerApellido, juanPerez.segundoApellido, juanPerez.dni, juanPerez.codPaciente, juanPerez.nroSegSocial, "6158");
+        System.out.println(historial1);
+
+        //HOSPITAL
+        Hospital norte = new Hospital(cochabamba.nombreCiudad,"7654", "Norte",4412345);
+        System.out.println(norte);
+
+        //SERVICIO
+        Servicio cirujia = new Servicio(cochabamba.nombreCiudad, norte.codHospital,norte.nombreHospital,norte.telefono,"Cirujia",50);
+        System.out.println(cirujia);
+
+        //MEDICO
+        Medico anaMartinez = new Medico("Ana", "Martinez","Rosales","7246847", "1024");
+        System.out.println(anaMartinez);
+
+        //VISITA
+        Visita a1 = new Visita("Jose","Muñoz","Miranda","7954318", juanPerez.codPaciente, juanPerez.nroSegSocial, historial1.codHistorial,"818",Calendar.getInstance().getTime());
+        System.out.println(a1);
     }
 }
